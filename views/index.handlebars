@@ -3,30 +3,31 @@
             <img src="">
             <h1>Welcome to the BurgerEater</h1>
             <h3>Create your burger below and start devouring ....</h3>
-            <form>
-                <div class="form-group">
-                    <label>Name of your burger</label>
-                    <input width="100%" name="name" id="name" class="form-control"> 
-                    <a type="submit" class="btn btn-outline-warning">Submit your burger!</a>
-                </div>
+            <form action="/burgers/add" method="POST"> 
+                <input name="burger">
+                <button type="submit">Create Burger</button>
             </form>
         </div>
     </div>
 
 
-    <div class = "container">
-        <div class="row border text-center">
+    <div class = "container mb-5 p-1">
+        <div class="row border text-center mb-2">
             <div class="col-6">
-                <h2>Burgers Waiting to be Devoured</h2>
-                <ul>
-{{!-- loop through returned array and desplay these dam burgers --}}
-                </ul>
+                <h2 class="my-3 p-2 border-bottom">To Be Devoured</h2>
+                    {{#each toEat}}
+                    <div>
+                        <h3>{{burger_name}}</h3>
+                        <a href="/burgers/{{id}}" class="btn btn-warning">Update</a>
+                    </div>
+                    {{/each}}
+                
             </div>
             <div class="col-6">
-                <h2>Burgers Tastefully Devoured</h2>
-                <ul>
-{{!-- loop through returned array and desplay these dam burgers --}}
-                </ul>
+                <h2 class="my-3 p-2 border-bottom">Tastefully Devoured</h2>
+                {{#each eatten}}
+                <h3>{{burger_name}}</h3>
+                {{/each}}
             </div>
         </div>
     </div>

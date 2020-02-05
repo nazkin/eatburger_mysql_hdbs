@@ -1,13 +1,10 @@
-const ORM = require('../config/orm');
 
-const viewBurgers = () => ORM.selectAll("burgers");
 
-const devourBurger = (id)=> ORM.updateOne("burgers","devoured", TRUE, "id", id);
 
-const createBurger = (name)=> ORM.insertOne("burgers", "burger_name","devoured", name, FALSE);
+// const eatBurger = (bool, id)=> ORM.updateOne("burgers","devoured", bool, "id", id);
+// const addBurger = (name, bool)=> ORM.insertOne("burgers", "burger_name","devoured", name, bool);
 
-module.exports = {
-    viewBurgers, 
-    devourBurger,
-    createBurger
-}
+// module.exports = viewBurgers;
+    
+    // eatBurger,
+    // addBurger
