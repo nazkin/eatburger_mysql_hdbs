@@ -18,7 +18,10 @@
                     {{#each toEat}}
                     <div>
                         <h3>{{burger_name}}</h3>
-                        <a href="/burgers/{{id}}" class="btn btn-warning">Update/Eat</a>
+                        <a href="/burgers/{{id}}" class="btn btn-outline-dark">Update</a>
+                        <form class="my-4 d-inline" action="/burgers/devour/{{id}}" method="POST">
+                            <button class="btn btn-warning" type="submit">Devour</button>
+                        </form>
                     </div>
                     {{/each}}
                 
