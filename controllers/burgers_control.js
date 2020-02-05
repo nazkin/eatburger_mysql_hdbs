@@ -26,7 +26,6 @@ router.get('/burgers', (req,res)=> {
 
 router.post('/burgers/add', (req, res)=> {
     const burgerNew = req.body.burger;
-    console.log(burgerNew);
     ORM.insertOne("burgers", "burger_name","devoured", burgerNew, 0, (val)=> {
         res.redirect('/');
     });
@@ -53,6 +52,13 @@ router.get('/burgers/:id', (req, res)=> {
 router.post('/burgers/devour/:id', (req, res)=> {
     const burgerId = req.params.id;
     ORM.updateOne("burgers","devoured", 1, "id", burgerId, (val)=>{
+        res.redirect('/');
+    });
+});
+router.post('/burgers/update/:id', (req, res)=> {
+    const burgId = req.params.id;
+    const burgNew = req.body.burgerChange;
+    ORM.updateOne("burgers","burger_name", burgNew, "id", burgId, (val)=> {
         res.redirect('/');
     });
 });
