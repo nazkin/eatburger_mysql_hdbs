@@ -26,7 +26,7 @@ const dbConfig = {
 const connection = mysql.createPool({
   host: dbConfig.HOST, 
   user: dbConfig.USER,
-  connection: dbConfig.CONNECTION,
+  password: dbConfig.CONNECTION,
   database: dbConfig.DB
 })
 
