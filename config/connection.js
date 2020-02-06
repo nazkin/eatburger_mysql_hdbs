@@ -16,11 +16,18 @@ const mysql = require('mysql');
 //   console.log("connected as id " + connection.threadId);
 // });
 
+const dbConfig = {
+  HOST: "us-cdbr-iron-east-04.cleardb.net",
+  USER: "bd6996868c6eef",
+  CONNECTION: "9efc0cb3",
+  DB: "heroku_1bef034957a67d5"
+}
+
 const connection = mysql.createPool({
-  host: "us-cdbr-iron-east-04.cleardb.net",
-  user: "bd6996868c6eef",
-  connection: "9efc0cb3",
-  database: "heroku_1bef034957a67d5"
+  host: dbConfig.HOST, 
+  user: dbConfig.USER,
+  connection: dbConfig.CONNECTION,
+  database: dbConfig.DB
 })
 
 
@@ -35,9 +42,3 @@ const connection = mysql.createPool({
 
 module.exports = connection;
 
-// {
-//   username:bd6996868c6eef,
-//   password: 9efc0cb3, 
-//   host: us-cdbr-iron-east-04.cleardb.net,
-//   database: heroku_1bef034957a67d5
-// }
